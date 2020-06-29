@@ -45,7 +45,7 @@ public class FacadeServiceBean implements FacadeServiceEndpointInterface {
 
         addDecipherOrderToQueue(message);
         
-        //message.setInfo("Ordre reçu et envoyé dans la queue.");
+        message.setInfo("Ordre reçu et envoyé dans la queue.");
 
         return message;
     }

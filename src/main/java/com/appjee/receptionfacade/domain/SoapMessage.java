@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class SoapMessage implements Serializable {
 
     //@XmlElement(name="statutOp")
-    private Boolean statutOp;
+    private StatusOp statusOp;
     //@XmlElement(name="info")
     private String info;
     //@XmlElement(name="data")
@@ -33,13 +33,13 @@ public class SoapMessage implements Serializable {
     //@XmlElement(name="operationVersion")
     private String operationVersion;
 
-    public Boolean getStatutOp() {
-        return statutOp;
+    public StatusOp getStatusOp() {
+        return statusOp;
     }
 
-    public void setStatutOp(Boolean statutOp) {
-        this.statutOp = statutOp;
-    }
+    public void setStatusOp(StatusOp statusOp) {
+        this.statusOp = statusOp;
+    }   
 
     public String getInfo() {
         return info;
@@ -99,7 +99,7 @@ public class SoapMessage implements Serializable {
 
     @Override
     public String toString() {
-        return "SoapMessage{" + "statutOp=" + statutOp + ", info=" + info + 
+        return "SoapMessage{" + "statutOp=" + statusOp + ", info=" + info + 
                 ", data=" + data + ", operationName=" + operationName + 
                 ", tokenApp=" + tokenApp + ", tokenUser=" + tokenUser + 
                 ", appVersion=" + appVersion + ", operationVersion=" + 
