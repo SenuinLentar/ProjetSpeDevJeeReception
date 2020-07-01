@@ -6,6 +6,7 @@
 package com.appjee.receptionfacade.facade;
 
 import com.appjee.receptionfacade.domain.SoapMessage;
+import com.appjee.receptionfacade.domain.StatusOp;
 import java.io.StringWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,16 +41,13 @@ public class FacadeServiceBean implements FacadeServiceEndpointInterface {
 
     @Override
     public SoapMessage receiveDecipherOrder(SoapMessage message) {
-        System.out.println("Appel de receiveDecipherOrder");
-        System.out.println("Message info : " + message.getInfo());
-
+        //send the received messagee to the queue
         addDecipherOrderToQueue(message);
         
-        message.setInfo("Ordre reçu et envoyé dans la queue.");
-
         return message;
     }
-
+    
+    //Transforms the SoapMessage into a XML message and adding it to the queue
     private void addDecipherOrderToQueue(SoapMessage message) {
         JAXBContext jaxbContext;
         try {

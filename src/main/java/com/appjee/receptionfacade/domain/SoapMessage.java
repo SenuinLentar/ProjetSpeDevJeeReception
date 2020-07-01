@@ -6,7 +6,6 @@
 package com.appjee.receptionfacade.domain;
 
 import java.io.Serializable;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
